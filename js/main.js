@@ -8,23 +8,20 @@
 var surnameList = ['Bianchi', 'Rossi', 'Duzioni', 'Balsano', 'Verdi'];
 
 
-var surnameUser = prompt('Qual è il tuo cognome segreto?');
-surnameList.push(capitalize(surnameUser.toLowerCase()));
+var surnameUser = capitalize(prompt('Qual è il tuo cognome segreto?').toLowerCase());
+
+surnameList.push(surnameUser);
 surnameList.sort();
+
+console.log('Il cognome aggiunto è ' + surnameUser);
 console.table(surnameList);
-console.log(surnameList.length);
 
-var i = 0;
-
-while ( i < surnameList.length ) {
-    if ( surnameList[i] == surnameUser ) {
-        var position = i;
-    }
-    i++;
-}
+var position = surnameList.indexOf(surnameUser);
 
 console.log('Complimenti! Il cognome inserito si trova in posizione ' + position);
 
 function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+// Chiedo scusa ma ho fatto tutto in 15 minuti causa spesa
